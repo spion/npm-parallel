@@ -2,7 +2,7 @@
 
 Run npm tasks in series, parallel or pipeline - even on Windows!
 
-Solves the remaining problems of [task automation with npm run][1]
+Solves most of the remaining problems of [task automation with npm run][1]
 
 # getting started
 
@@ -40,11 +40,11 @@ Want to run both watchify and typescript --watch ?
 }
 ```
 
-Here is the example from [substack's article]][1]. Note that `cat` wont work on windows
+Here is the example from [substack's article][1]. Note that `cat` wont work on windows
 
 ```json
 {
-    "browserify-js": "browserify browser/main.js"
+    "browserify-js": "browserify browser/main.js",
     "uglify-js": "uglifyjs -mc -o static/bundle.js",
     "build-js": "pipe browserify-js uglify-js",
     "build-css": "cat static/pages/*.css tabs/*/*.css",
@@ -55,6 +55,7 @@ Here is the example from [substack's article]][1]. Note that `cat` wont work on 
     "start": "node server.js",
     "test": "tap test/*.js"
 }
+```
 
 # todo
 
