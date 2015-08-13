@@ -32,8 +32,8 @@ Want to run both watchify and typescript --watch ?
 
 ```json
 {
-    "watch": "parallel watchify tsc-watch"
-    "watchify": "watchify lib/main.js -o bundle.js -d"
+    "watch": "parallel watchify tsc-watch",
+    "watchify": "watchify lib/main.js -o bundle.js -d",
     "tsc-watch": "tsc --watch"
 }
 ```
