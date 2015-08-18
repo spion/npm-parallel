@@ -1,29 +1,20 @@
 {
-  "name": "npm-runtools",
-  "version": "1.0.1",
-  "description": "Run npm tasks in parallel, series or pipeline",
+  "name": "npm-parallel",
+  "version": "2.0.0",
+  "description": "npm tasks that run other npm tasks in parallel!",
   "main": "index.js",
   "bin": {
-    "parallel": "bin/parallel.js",
-    "series": "bin/series.js",
-    "pipe": "bin/pipe.js"
+    "parallel": "bin/parallel.js"
   },
   "scripts": {
-    "test": "npm run test-series",
-    "test-series": "series test-parallel test-pipeline",
-    "test-parallel": "parallel echo-first echo-second",
+    "test": "parallel echo-first echo-second",
     "echo-first": "echo First",
-    "echo-second": "echo Second",
-    "test-pipeline": "pipe filelist linecount",
-    "filelist": "ls -l",
-    "linecount": "wc -l"
+    "echo-second": "echo Second"
   },
   "keywords": [
     "npm",
     "run",
-    "parallel",
-    "series",
-    "pipeline"
+    "parallel"
   ],
   "author": "spion",
   "license": "ISC"

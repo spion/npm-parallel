@@ -1,29 +1,25 @@
-# npm-runtools
+# npm-parallel
 
-Run npm tasks in series, parallel or pipeline - even on Windows!
+Run npm tasks in parallel, even on Windows!
 
-Solves most of the remaining problems of [task automation with npm run][1]
+Solves the biggest problem of [task automation with npm run][1]
 
 # getting started
 
-Install npm-runtools in your project as a dev dependency
+Install npm-parallel in your project as a dev dependency
 
-    npm install --save-dev npm-runtools
+    npm install --save-dev npm-parallel
 
-Now you can use `parallel`, `series` and `pipe` in your project's
-scripts!
+Now you can use `parallel` in your project's scripts!
 
 Example:
 
 ```json
 {
     "scripts": {
-        "test": "npm run test-series",
-        "test-series": "series test-parallel test-pipeline",
-        "test-parallel": "parallel echo-first echo-second",
+        "test": "parallel echo-first echo-second",
         "echo-first": "echo First",
         "echo-second": "echo Second",
-        "test-pipeline": "pipe filelist linecount",
         "filelist": "ls -l",
         "linecount": "wc -l"
       }
@@ -40,29 +36,12 @@ Want to run both watchify and typescript --watch ?
 }
 ```
 
-Here is the example from [substack's article][1]. Note that `cat` wont work on windows
-
-```json
-{
-    "browserify-js": "browserify browser/main.js",
-    "uglify-js": "uglifyjs -mc -o static/bundle.js",
-    "build-js": "pipe browserify-js uglify-js",
-    "build-css": "cat static/pages/*.css tabs/*/*.css",
-    "build": "series build-js build-css",
-    "watch-js": "watchify browser/main.js -o static/bundle.js -dv",
-    "watch-css": "catw static/pages/*.css tabs/*/*.css -o static/bundle.css -v",
-    "watch": "parallel watch-js watch-css",
-    "start": "node server.js",
-    "test": "tap test/*.js"
-}
-```
 
 # todo
 
-Actually test this on Windows. Its definitely doable, but it probably
-has bugs as I don't have Windows on any on my machines.
+Actually test this on Windows.
 
-# licence
+# license
 
 MIT
 
