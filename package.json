@@ -1,6 +1,6 @@
 {
   "name": "npm-parallel",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "npm tasks that run other npm tasks in parallel!",
   "main": "index.js",
   "bin": {
