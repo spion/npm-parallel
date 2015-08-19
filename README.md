@@ -14,18 +14,6 @@ Now you can use `parallel` in your project's scripts!
 
 Example:
 
-```json
-{
-    "scripts": {
-        "test": "parallel echo-first echo-second",
-        "echo-first": "echo First",
-        "echo-second": "echo Second",
-        "filelist": "ls -l",
-        "linecount": "wc -l"
-      }
-}
-```
-
 Want to run both watchify and typescript --watch ?
 
 ```json
