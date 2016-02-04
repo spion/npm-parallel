@@ -7,10 +7,10 @@ function runTask(taskname) {
     var command, args;
     if (process.platform === 'win32') {
         command = 'cmd'
-        args = ['/c', 'npm run --loglevel silent ' + taskname]
+        args = ['/c', 'npm run ' + taskname]
     } else {
         command = 'npm'
-        args = ['run', '--loglevel', 'silent', taskname]
+        args = ['run', taskname]
     }
     return spawn(command, args, {
         env: process.env,
